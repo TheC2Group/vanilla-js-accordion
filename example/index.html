@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>accordion</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link rel="stylesheet" href="../accordion.css">
+        <link rel="stylesheet" href="./css/index.css">
+    </head>
+    <body>
+
+        <div class="Wrap">
+
+            <h3>Default Accordion</h3>
+            <div class="Accordion Example1">
+                <div class="item" data-status="disabled">
+                    <div class="target" tabindex="0">Toggle Target Title 1</div>
+                    <div class="panel">
+                        <p>An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of a header and an associated content region or panel. The primary use of an Accordion is to present multiple sections of content on a single page without scrolling, where all of the sections are peers in the application or object hierarchy. The general look is similar to a tree where each root tree node is an expandable accordion header.</p>
+                    </div>
+                </div>
+                <div class="item" data-status="disabled">
+                    <div class="target" tabindex="0">Toggle Target Title 2</div>
+                    <div class="panel">
+                        <p>The accordion component must have a role of tablist and have aria-multiselectable="true" This will enable an assistive technology, such as screen reader, to convey that the tablist is an accordion or a multiselectable tablist. This will also tell the user that the keyboard navigation matches an accordion and not a <a href="#">tablist</a>.</p>
+                    </div>
+                </div>
+                <div class="item" data-status="disabled">
+                    <div class="target" tabindex="0">Toggle Target Title 3</div>
+                    <div class="panel">
+                        <p>Contained within the tablist is a set of tab/tabpanel pairs. Each header tab in the tablist has a role of tab. The accordion panel uses the role tabpanel and should have an aria-labelledby relationship referencing the correponding header having a role of tab</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="destroy">Destroy Default Accordion</button>
+            <button class="enable">Enable Default Accordion</button>
+
+            <h3>Accordion that closes the previously expanded item.</h3>
+            <div class="Accordion Example2">
+                <div class="item" data-status="disabled">
+                    <a class="target" href="#">Toggle Target Title 1</a>
+                    <div class="panel">
+                        <p>An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of a header and an associated content region or panel. The primary use of an Accordion is to present multiple sections of content on a single page without scrolling, where all of the sections are peers in the application or object hierarchy. The general look is similar to a tree where each root tree node is an expandable accordion header.</p>
+                    </div>
+                </div>
+                <div class="item" data-status="disabled">
+                    <a class="target" href="#">Toggle Target Title 2</a>
+                    <div class="panel">
+                        <p>The accordion component must have a role of tablist and have aria-multiselectable="true" This will enable an assistive technology, such as screen reader, to convey that the tablist is an accordion or a multiselectable tablist. This will also tell the user that the keyboard navigation matches an accordion and not a tablist.</p>
+                    </div>
+                </div>
+                <div class="item" data-status="disabled">
+                    <a class="target" href="#">Toggle Target Title 3</a>
+                    <div class="panel">
+                        <p>Contained within the tablist is a set of tab/tabpanel pairs. Each header tab in the tablist has a role of tab. The accordion panel uses the role tabpanel and should have an aria-labelledby relationship referencing the correponding header having a role of tab</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Accordion with custom IDs</h3>
+            <div class="Accordion Example3">
+                <div class="item" data-status="disabled">
+                    <a class="target" href="#" id="Uno">Toggle Target Title 1</a>
+                    <div class="panel" aria-labelledby="Uno">
+                        <p>An accordion component is a collection of expandable panels associated with a common outer container. Panels consist of a header and an associated content region or panel. The primary use of an Accordion is to present multiple sections of content on a single page without scrolling, where all of the sections are peers in the application or object hierarchy. The general look is similar to a tree where each root tree node is an expandable accordion header.</p>
+                    </div>
+                </div>
+                <div class="item" data-status="disabled">
+                    <a class="target" href="#" id="Dos">Toggle Target Title 2</a>
+                    <div class="panel" aria-labelledby="Dos">
+                        <p>The accordion component must have a role of tablist and have aria-multiselectable="true" This will enable an assistive technology, such as screen reader, to convey that the tablist is an accordion or a multiselectable tablist. This will also tell the user that the keyboard navigation matches an accordion and not a tablist.</p>
+                    </div>
+                </div>
+                <div class="item" data-status="disabled">
+                    <a class="target" href="#" id="Tres">Toggle Target Title 3</a>
+                    <div class="panel" aria-labelledby="Tres">
+                        <p>Contained within the tablist is a set of tab/tabpanel pairs. Each header tab in the tablist has a role of tab. The accordion panel uses the role tabpanel and should have an aria-labelledby relationship referencing the correponding header having a role of tab</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="./bundle/index.js"></script>
+    </body>
+</html>

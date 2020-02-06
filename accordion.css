@@ -1,0 +1,10 @@
+
+.item {
+    box-sizing: content-box;
+    overflow: hidden;
+}
+
+.panel[aria-hidden="true"],
+[data-status="disabled"] .panel {
+    display: none;
+}
