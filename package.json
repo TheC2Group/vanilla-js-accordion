@@ -1,6 +1,6 @@
 {
   "name": "vanilla-js-accordion",
-  "version": "1.0.1",
+  "version": "1.1.2",
   "description": "Accessible vanilla JS accordion using CSS transition to expand and contract.",
   "jsnext:main": "accordion.js",
   "main": "cjs/accordion.js",
