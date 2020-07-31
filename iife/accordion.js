@@ -108,6 +108,12 @@ var Accordion = (function () {
         setFocusEnd.call(this, thisItem);
       } else {
         thisItem.panel.setAttribute('aria-hidden', 'true');
+        thisItem.el.setAttribute(this.opts.attribute, this.opts.contracted);
+        thisItem.target.setAttribute('aria-expanded', 'false');
+
+        if (!this.opts.allowMultiple) {
+          thisItem.target.setAttribute('aria-selected', 'false');
+        }
       }
 
       thisItem.inTransition = false;
@@ -159,16 +165,8 @@ var Accordion = (function () {
         thisItem.inTransition = true;
       }
 
-      thisItem.el.setAttribute(this.opts.attribute, this.opts.contracted);
-      thisItem.target.setAttribute('aria-expanded', 'false');
-
-      if (!this.opts.allowMultiple) {
-        thisItem.target.setAttribute('aria-selected', 'false');
-      }
-
       thisItem.el.style.height = controlHeight.toString() + 'px';
       thisItem.isExpanded = false;
-      transitionEnd.call(this, index);
     };
 
     var contractAll = function contractAll(skip) {

@@ -108,6 +108,12 @@ var transitionEnd = function transitionEnd(index) {
     setFocusEnd.call(this, thisItem);
   } else {
     thisItem.panel.setAttribute('aria-hidden', 'true');
+    thisItem.el.setAttribute(this.opts.attribute, this.opts.contracted);
+    thisItem.target.setAttribute('aria-expanded', 'false');
+
+    if (!this.opts.allowMultiple) {
+      thisItem.target.setAttribute('aria-selected', 'false');
+    }
   }
 
   thisItem.inTransition = false;
@@ -159,16 +165,8 @@ var contract = function contract(index) {
     thisItem.inTransition = true;
   }
 
-  thisItem.el.setAttribute(this.opts.attribute, this.opts.contracted);
-  thisItem.target.setAttribute('aria-expanded', 'false');
-
-  if (!this.opts.allowMultiple) {
-    thisItem.target.setAttribute('aria-selected', 'false');
-  }
-
   thisItem.el.style.height = controlHeight.toString() + 'px';
   thisItem.isExpanded = false;
-  transitionEnd.call(this, index);
 };
 
 var contractAll = function contractAll(skip) {
@@ -446,7 +444,5 @@ document.querySelector('.destroy').addEventListener('click', function () {
 document.querySelector('.enable').addEventListener('click', function() {
     defaultAcc = new Accordion(document.querySelector('.Example1'));
 });
-
-defaultAcc.activate(1);
 
 },{"../../cjs/accordion.js":1}]},{},[2]);
