@@ -2,7 +2,7 @@
 /*!
  * vanilla-js-accordion
  * undefined
- * @version 1.1.2
+ * @version 1.1.3
  * @license MIT (c) The C2 Group (c2experience.com)
  */
 'use strict';
