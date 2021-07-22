@@ -188,6 +188,15 @@ var contractAll = function (skip) {
     });
 };
 
+var expandAll = function () {
+    var self = this;
+    this.items.forEach(function (item, i) {
+        if (!item.isExpanded) {
+            expand.call(self, i);
+        }
+    });
+};
+
 var activate = function (index) {
     var thisItem = this.items[index];
 
@@ -430,6 +439,7 @@ Group.prototype.activate = activate;
 Group.prototype.expand = expand;
 Group.prototype.contract = contract;
 Group.prototype.contractAll = contractAll;
+Group.prototype.expandAll = expandAll;
 Group.prototype.enable = function () {
     this._enabled = true;
     return this;

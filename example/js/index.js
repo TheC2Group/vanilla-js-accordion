@@ -18,3 +18,11 @@ document.querySelector('.destroy').addEventListener('click', function () {
 document.querySelector('.enable').addEventListener('click', function() {
     defaultAcc = new Accordion(document.querySelector('.Example1'));
 });
+
+document.querySelector('.expand').addEventListener('click', function () {
+    defaultAcc.expandAll();
+});
+
+document.querySelector('.contract').addEventListener('click', function () {
+    defaultAcc.contractAll();
+});

@@ -29,15 +29,15 @@ Basic Example
 
 ```html
 <div class="Accordion">
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="contracted">
         <div class="target">...</div>
         <div class="panel">...</div>
     </div>
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="contracted">
         <div class="target">...</div>
         <div class="panel">...</div>
     </div>
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="contracted">
         <div class="target">...</div>
         <div class="panel">...</div>
     </div>
@@ -64,23 +64,23 @@ var options = {
 new Accordion('.Accordion', options);
 ```
 
-Since the height of the "control" and the height of the "panel" make up the height of the item. It is sometimes not the case that the "target" is the same as the "control". Below is an example of this:
+Since the height of the "control" and the height of the "panel" make up the height of the item. It is sometimes not the case that the "target" is the same as the "control". If you want an item to be open on page load, change the data-status to "expanded". Below is an example of this:
 
 ```html
 <div class="Accordion">
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="expanded">
         <div class="control">
             <a class="target" href="#">...</a>
         </div>
         <div class="panel">...</div>
     </div>
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="contracted">
         <div class="control">
             <a class="target" href="#">...</a>
         </div>
         <div class="panel">...</div>
     </div>
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="contracted">
         <div class="control">
             <a class="target" href="#">...</a>
         </div>
@@ -102,15 +102,15 @@ Add an ID to each accordion target and an aria-labelledby attribute to each pane
 
 ```html
 <div class="Accordion">
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="contracted">
         <div class="target" id="Uno">...</div>
         <div class="panel" aria-labelledby="Uno">...</div>
     </div>
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="contracted">
         <div class="target" id="Dos">...</div>
         <div class="panel" aria-labelledby="Dos">...</div>
     </div>
-    <div class="item" data-status="disabled">
+    <div class="item" data-status="contracted">
         <div class="target" id="Tres">...</div>
         <div class="panel" aria-labelledby="Tres">...</div>
     </div>
@@ -127,6 +127,7 @@ accordion.activate(0);    // toggles accordion to the index
 accordion.expand(0);      // expands accordion to the index
 accordion.contract(0);    // contracts accordion to the index
 accordion.contractAll(0); // contracts all the accordions, the optional parameter is an index that gets ignored
+accordion.expandAll();    // expands all the accordions
 accordion.destroy()       // removes event listeners and aria properties
 ```
 

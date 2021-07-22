@@ -2,7 +2,7 @@
 /*!
  * vanilla-js-accordion
  * undefined
- * @version 1.0.0
+ * @version 1.1.2
  * @license MIT (c) The C2 Group (c2experience.com)
  */
 'use strict';
@@ -176,6 +176,15 @@ var contractAll = function contractAll(skip) {
 
     if (item.isExpanded) {
       contract.call(self, i);
+    }
+  });
+};
+
+var expandAll = function expandAll() {
+  var self = this;
+  this.items.forEach(function (item, i) {
+    if (!item.isExpanded) {
+      expand.call(self, i);
     }
   });
 };
@@ -408,6 +417,7 @@ Group.prototype.activate = activate;
 Group.prototype.expand = expand;
 Group.prototype.contract = contract;
 Group.prototype.contractAll = contractAll;
+Group.prototype.expandAll = expandAll;
 
 Group.prototype.enable = function () {
   this._enabled = true;
@@ -443,6 +453,14 @@ document.querySelector('.destroy').addEventListener('click', function () {
 
 document.querySelector('.enable').addEventListener('click', function() {
     defaultAcc = new Accordion(document.querySelector('.Example1'));
+});
+
+document.querySelector('.expand').addEventListener('click', function () {
+    defaultAcc.expandAll();
+});
+
+document.querySelector('.contract').addEventListener('click', function () {
+    defaultAcc.contractAll();
 });
 
 },{"../../cjs/accordion.js":1}]},{},[2]);

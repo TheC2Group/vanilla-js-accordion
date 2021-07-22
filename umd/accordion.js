@@ -1,7 +1,7 @@
 /*!
  * vanilla-js-accordion
  * undefined
- * @version 1.0.0
+ * @version 1.1.2
  * @license MIT (c) The C2 Group (c2experience.com)
  */
 (function (global, factory) {
@@ -179,6 +179,15 @@
 
         if (item.isExpanded) {
           contract.call(self, i);
+        }
+      });
+    };
+
+    var expandAll = function expandAll() {
+      var self = this;
+      this.items.forEach(function (item, i) {
+        if (!item.isExpanded) {
+          expand.call(self, i);
         }
       });
     };
@@ -411,6 +420,7 @@
     Group.prototype.expand = expand;
     Group.prototype.contract = contract;
     Group.prototype.contractAll = contractAll;
+    Group.prototype.expandAll = expandAll;
 
     Group.prototype.enable = function () {
       this._enabled = true;
